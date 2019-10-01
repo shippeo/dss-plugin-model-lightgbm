@@ -9,7 +9,7 @@ class DkuLGBMRegressor(LGBMRegressor):
                  subsample_for_bin=200000, objective=None, class_weight=None, min_split_gain=0.0, min_child_weight=0.001, 
                  min_child_samples=20, subsample=1.0, subsample_freq=0, colsample_bytree=1.0, reg_alpha=0.0, 
                  reg_lambda=0.0, random_state=None, n_jobs=-1, silent=True, importance_type='split', 
-                 early_stopping_rounds=None):
+                 early_stopping_rounds=None, early_stopping=None):
         self.early_stopping_rounds = early_stopping_rounds
         super(DkuLGBMRegressor, self).__init__(boosting_type=boosting_type, num_leaves=num_leaves, max_depth=max_depth, learning_rate=learning_rate, n_estimators=n_estimators, 
                                              subsample_for_bin=subsample_for_bin, objective=objective, class_weight=class_weight, min_split_gain=min_split_gain, min_child_weight=min_child_weight, 

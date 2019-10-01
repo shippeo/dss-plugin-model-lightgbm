@@ -72,6 +72,20 @@
             "gridParam": true
         },
         {
+            "name": "early_stopping",
+            "label": "Early stopping",
+            "description": " Use LightGBM built-in early stop mechanism so the exact number of trees will be optimized.",
+            "type": "BOOLEAN"
+        },
+        {
+            "name": "early_stopping_rounds",
+            "label": "Early stopping rounds",
+            "description": "The optimizer stops if the loss never decreases for this consecutive number of iterations. Typical values: 1 - 100",
+            "type": "INT",
+            "defaultValue": 4,
+            "visibilityCondition": "model.early_stopping"
+        },
+        {
             "name": "min_split_gain",
             "label": "Min split gain",
             "description":"Minimum loss reduction required to make a further partition on a leaf node of the tree.",
