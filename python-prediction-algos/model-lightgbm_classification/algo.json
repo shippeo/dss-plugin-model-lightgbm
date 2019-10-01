@@ -1,0 +1,196 @@
+/* This file is the descriptor for the Custom Python Prediction algorithm model-lightgbm_classification */
+{
+    "meta" : {
+        // label: name of the algorithm as displayed, should be short
+        "label": "LightGBM",
+
+        // description: longer string to help end users understand what this algorithm is. Will be displayed in the algorithm page
+        "description": "LightGBM is a gradient boosting framework that uses tree based learning algorithms. It is designed to be distributed and efficient.",
+
+        // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-puzzle-piece"
+    },
+    
+    // List of types of prediction for which the algorithm will be available.
+    // Possibles values are: ["BINARY_CLASSIFICATION", "MULTICLASS", "REGRESSION"]
+    "predictionTypes": ["BINARY_CLASSIFICATION", "MULTICLASS"],
+
+    // Depending on the mode you select, DSS will handle or not the building of the grid from the params
+    // Possible values are ["NONE", "MANAGED", "CUSTOM"]
+    "gridSearchMode": "MANAGED",
+
+    // Whether the model supports or not sample weights for training. 
+    // If yes, the clf from `algo.py` must have a `fit(X, y, sample_weights=None)` method
+    // If not, sample weights are not applied on this algorithm, but if they are selected
+    // for training, they will be applied on scoring metrics and charts.
+    "supportsSampleWeights": true,
+
+    // Whether the model supports sparse matrice for fitting and predicting, 
+    // i.e. if the `clf` provided in `algo.py` accepts a sparse matrix as argument
+    // for its `fit` and `predict` methods
+    "acceptsSparseMatrix": false,
+
+    /* params:
+    DSS will generate a formular from this list of requested parameters.
+    Your component code can then access the value provided by users using the "name" field of each parameter.
+
+    Available parameter types include:
+    STRING, INT, DOUBLE, BOOLEAN, DATE, SELECT, TEXTAREA, PRESET and others.
+
+    Besides, if the parameters are to be used to build the grid search, you must add a `gridParam` field and set it to true.
+
+    For the full list and for more details, see the documentation: https://doc.dataiku.com/dss/latest/plugins/reference/params.html
+
+    Below is an example of parameters for an AdaBoost regressor from scikit learn.
+    */
+    "params": [
+        {
+            "name": "boosting_type",
+            "label": "Boosting type",
+            "description": "",
+            "type": "MULTISELECT",
+            "defaultValue": ["gbdt"],
+            "selectChoices": [
+                {
+                    "value":"gbdt",
+                    "label":"Traditional Gradient Boosting Decision Tree"
+                },
+                {
+                    "value":"dart",
+                    "label":"Dropouts meet Multiple Additive Regression Trees"
+                },
+                {
+                    "value":"goss",
+                    "label": "Gradient-based One-Side Sampling"
+                },
+                {
+                    "value":"rf",
+                    "label": "Random Forest"
+                }
+            ],
+            "gridParam": true
+        },
+        {
+            "name": "num_leaves",
+            "label": "Num leaves",
+            "description": "Maximum tree leaves for base learners.",
+            "type": "DOUBLES",
+            "defaultValue": [50, 100],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "max_depth",
+            "label": "Max depth",
+            "description": "Maximum tree depth for base learners, <=0 means no limit",
+            "type": "DOUBLES",
+            "defaultValue": [50, 100],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "learning_rate",
+            "label": "Learning rate",
+            "description":"Lower values slow down convergence and can make the model more robust. Typical values: 0.01 - 0.3",
+            "type": "DOUBLES",
+            "defaultValue": [0.2],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "n_estimators",
+            "label": "Num estimators",
+            "description": "The maximum number of estimators at which boosting is terminated. In case of perfect fit, the learning procedure is stopped early.",
+            "type": "DOUBLES",
+            "defaultValue": [50, 100],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "min_split_gain",
+            "label": "Min split gain",
+            "description":"Minimum loss reduction required to make a further partition on a leaf node of the tree.",
+            "type": "DOUBLES",
+            "defaultValue": [0],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "min_child_weight",
+            "label": "Min child weight",
+            "description":"Minimum sum of instance weight (hessian) needed in a child (leaf).",
+            "type": "DOUBLES",
+            "defaultValue": [0.001],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "min_child_samples",
+            "label": "Min child samples", 
+            "description":"Minimum number of data needed in a child (leaf).",
+            "type": "DOUBLES",
+            "defaultValue": [20],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "subsample",
+            "label": "Subsample", 
+            "description":"Subsample ratio of the training instance.",
+            "type": "DOUBLES",
+            "defaultValue": [1.0],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "subsample_freq",
+            "label": "Subsample freq", 
+            "description":"Frequence of subsample, <=0 means no enable.",
+            "type": "DOUBLES",
+            "defaultValue": [0],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "colsample_bytree",
+            "label": "Col sample by tree", 
+            "description":"Subsample ratio of columns when constructing each tree.",
+            "type": "DOUBLES",
+            "defaultValue": [1.0],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "reg_alpha",
+            "label": "Reg alpha", 
+            "description":"L1 regularization term on weights.",
+            "type": "DOUBLES",
+            "defaultValue": [0.0],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "reg_lambda",
+            "label": "Reg lambda", 
+            "description":"L2 regularization term on weights.",
+            "type": "DOUBLES",
+            "defaultValue": [0.0],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "random_state",
+            "label": "Random state",
+            "description": "Using a fixed random seed allows for reproducible result.",
+            "type": "DOUBLE",
+            "defaultValue": 1337
+        },
+        {
+            "name": "n_jobs",
+            "label": "Parallelism",
+            "description": "Number of cores used for parallel training. Using more cores leads to faster training but at the expense of more memory consumption, especially for large training datasets. (-1 means 'all cores')",
+            "type": "DOUBLE",
+            "defaultValue": 4
+        } 
+    ]
+}

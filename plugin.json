@@ -1,0 +1,13 @@
+{
+    "id": "model-lightgbm",
+    "version": "0.0.1",
+    "meta": {
+        "label": "LightGBM",
+        "author": "Dataiku (Du PHAN)",
+        "description": "LightGBM is a gradient boosting framework that uses tree based learning algorithms.",
+        "icon": "icon-puzzle-piece",
+        "tags": ["Machine Learning"], 
+        "url": "https://www.dataiku.com/community/plugins/info/lightGBM.html",
+        "licenseInfo": "Apache Software License"
+    }
+}
