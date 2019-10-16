@@ -1,8 +1,8 @@
 {
     "meta" : {
-        "label": "LightGBM",
+        "label": "LightGBM Regression",
         "description": "LightGBM is a gradient boosting framework that uses tree based learning algorithms. It is designed to be distributed and efficient.",
-        "icon": "icon-puzzle-piece"
+        "icon": "icon-list-ol"
     },
     "predictionTypes": ["REGRESSION"],
     "gridSearchMode": "MANAGED",
@@ -105,7 +105,7 @@
         },
         {
             "name": "min_child_samples",
-            "label": "Min child samples", 
+            "label": "Min child samples",
             "description":"Minimum number of data needed in a child (leaf).",
             "type": "DOUBLES",
             "defaultValue": [20],
@@ -114,7 +114,7 @@
         },
         {
             "name": "subsample",
-            "label": "Subsample", 
+            "label": "Subsample",
             "description":"Subsample ratio of the training instance.",
             "type": "DOUBLES",
             "defaultValue": [1.0],
@@ -123,7 +123,7 @@
         },
         {
             "name": "subsample_freq",
-            "label": "Subsample freq", 
+            "label": "Subsample freq",
             "description":"Frequence of subsample, <=0 means no enable.",
             "type": "DOUBLES",
             "defaultValue": [0],
@@ -132,7 +132,7 @@
         },
         {
             "name": "colsample_bytree",
-            "label": "Col sample by tree", 
+            "label": "Col sample by tree",
             "description":"Subsample ratio of columns when constructing each tree.",
             "type": "DOUBLES",
             "defaultValue": [1.0],
@@ -141,7 +141,7 @@
         },
         {
             "name": "reg_alpha",
-            "label": "Reg alpha", 
+            "label": "Reg alpha",
             "description":"L1 regularization term on weights.",
             "type": "DOUBLES",
             "defaultValue": [0.0],
@@ -150,7 +150,7 @@
         },
         {
             "name": "reg_lambda",
-            "label": "Reg lambda", 
+            "label": "Reg lambda",
             "description":"L2 regularization term on weights.",
             "type": "DOUBLES",
             "defaultValue": [0.0],
@@ -170,6 +170,6 @@
             "description": "Number of cores used for parallel training. Using more cores leads to faster training but at the expense of more memory consumption, especially for large training datasets. (-1 means 'all cores')",
             "type": "DOUBLE",
             "defaultValue": 4
-        } 
+        }
     ]
 }
