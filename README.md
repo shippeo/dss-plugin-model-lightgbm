@@ -2,7 +2,7 @@
 
 The LightGBM plugin provides option in Dataiku DSS to use this algorithm with DSS Visual Machine Learning pipeline.
 
->LightGBM is a gradient boosting framework that uses tree based learning algorithms. It is designed to be distributed and efficient with the following advantages: <br>* Faster training speed and higher efficiency.<br>* Lower memory usage.<br>*Better accuracy.<br>* Support of parallel and GPU learning.<br>* Capable of handling large-scale data
+>LightGBM is a gradient boosting framework that uses tree based learning algorithms. It is designed to be distributed and efficient with the following advantages: <br>* Faster training speed and higher efficiency.<br>* Lower memory usage.<br>* Better accuracy.<br>* Support of parallel and GPU learning.<br>* Capable of handling large-scale data
 
 [Microsoft's LightGBM documentation](https://github.com/microsoft/LightGBM)
 
