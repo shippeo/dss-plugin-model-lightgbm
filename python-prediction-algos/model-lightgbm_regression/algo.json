@@ -1,7 +1,7 @@
 {
     "meta" : {
         "label": "LightGBM Regression",
-        "description": "LightGBM is a gradient boosting framework that uses tree based learning algorithms. It is designed to be distributed and efficient.",
+        "description": "LightGBM is a gradient boosting framework that uses tree based learning algorithms. It is designed to be distributed and efficient. This custom algorithm needs to be used with an appropriate code-env.",
         "icon": "icon-list-ol"
     },
     "predictionTypes": ["REGRESSION"],
