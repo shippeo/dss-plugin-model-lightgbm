@@ -1,6 +1,6 @@
 {
     "id": "model-lightgbm",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "meta": {
         "label": "LightGBM",
         "author": "Dataiku (Du PHAN)",
