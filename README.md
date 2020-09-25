@@ -18,7 +18,7 @@ If you want to use other algorithms along side with lightGBM in the Visual Machi
 * In your visual ML task, go to Advanced -> Runtime environment -> Choose the appropriate code environment.
 * Select the LightGBM custom algorithm in your visual machine learning tasks.
 
-Please see [plugin page](https://www.dataiku.com/dss/plugins/info/lightgbm.html) on Dataiku's website for further details of the algorithm.
+Please see [plugin page](https://www.dataiku.com/product/plugins/lightgbm-custom-model/) on Dataiku's website for further details of the algorithm.
 
 You can also ask your questions on our Q&A, [answers.dataiku.com](https://answers.dataiku.com), or open an [Github issue](https://github.com/dataiku/dataiku-contrib/issues).
 
